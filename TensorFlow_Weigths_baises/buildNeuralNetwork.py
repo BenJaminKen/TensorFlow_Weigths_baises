@@ -74,6 +74,7 @@ train_step=tf.train.GradientDescentOptimizer(0.1).minimize(loss)
 init=tf.global_variables_initializer()
 sess= tf.Session()
 sess.run(init)
+
 for i in range(1000):
     sess.run(train_step,feed_dict={xs:x_data,ys:y_date})
     if i%50==0:
