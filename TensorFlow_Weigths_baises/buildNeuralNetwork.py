@@ -1,5 +1,6 @@
 ﻿import tensorflow as tf
 import numpy as np
+import matplotlib.pyplot as plt
 
 def add_layer(inputs,in_size,out_size,activation_function=None):
     # random_normal: 正太分布随机数，均值mean,标准差stddev
@@ -72,6 +73,12 @@ prediciton=add_layer(l1,10,1,activation_function=None)
 loss=tf.reduce_mean(tf.reduce_sum(tf.square(ys-prediciton),reduction_indices=[1]))
 train_step=tf.train.GradientDescentOptimizer(0.1).minimize(loss)
 init=tf.global_variables_initializer()
+fig=plt.figure()
+ax=fig.add_subplot(1,1,1)
+ax.scatter(x_data,y_date)
+plt.ion()
+plt.show()
+
 sess= tf.Session()
 sess.run(init)
 
@@ -79,4 +86,11 @@ for i in range(1000):
     sess.run(train_step,feed_dict={xs:x_data,ys:y_date})
     if i%50==0:
         print(sess.run(loss,feed_dict={xs:x_data,ys:y_date}))
+        try:
+           ax.lines.remove(lines[0])
+        except Exception:
+            pass
+        prediciton_value=(sess.run(prediciton,feed_dict={xs:x_data}))
+        lines=ax.plot(x_data,prediciton_value,'r-',lw=5)
+        plt.pause(0.1)
 sess.close()
