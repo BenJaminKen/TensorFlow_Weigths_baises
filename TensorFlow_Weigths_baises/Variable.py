@@ -10,6 +10,7 @@ update=tf.assign(state,new_value)
 init=tf.initialize_all_variables()
 
 with tf.Session() as sess:
+    #实例化变量之后，变量值会保存
     sess.run(init)
     for _ in range(3):
       print(sess.run(update))

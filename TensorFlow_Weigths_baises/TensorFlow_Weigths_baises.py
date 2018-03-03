@@ -22,8 +22,7 @@ train=optimizer.minimize(loss)
 init=tf.initialize_all_variables()
 
 sess=tf.Session()
-sess.run(init) #import
-
+sess.run(init) #important
 for step in range(200):
     sess.run(train)
     if step%20==0:
