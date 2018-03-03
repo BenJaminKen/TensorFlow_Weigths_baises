@@ -5,7 +5,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>8f32f6f3-9d2b-40f5-ae39-fabb5a1c51ec</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>TensorFlow_Weigths_baises.py</StartupFile>
+    <StartupFile>
+    </StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,9 +23,6 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="BuildNeuralNetwork.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="placeholder.py">
       <SubType>Code</SubType>
     </Compile>
