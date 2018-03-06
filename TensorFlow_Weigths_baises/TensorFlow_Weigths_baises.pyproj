@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>8f32f6f3-9d2b-40f5-ae39-fabb5a1c51ec</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>minst.py</StartupFile>
+    <StartupFile>dropout.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,6 +23,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="buildNeuralNetwork.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dropout.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="minst.py">
